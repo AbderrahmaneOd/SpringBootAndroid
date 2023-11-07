@@ -4,20 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
+    android:gravity="center"
     tools:context=".interfaces.role.AddRole"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Role" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Name" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Nom" />
 
     <EditText
         android:id="@+id/code"
@@ -29,6 +26,8 @@
         android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:textSize="20sp"
+        android:layout_margin="25dp"
+        android:text="Ajouter" />
 
 </LinearLayout>

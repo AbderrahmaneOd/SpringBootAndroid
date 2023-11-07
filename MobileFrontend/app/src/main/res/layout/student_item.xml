@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/id"
@@ -13,35 +12,85 @@
         android:visibility="gone"/>
 
     <TextView
-        android:id="@+id/firstName"
+        android:id="@+id/nom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Nom :"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/firstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/nom"
         android:text="TextView" />
 
     <TextView
-        android:id="@+id/lastName"
+        android:id="@+id/prenom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:text="TextView" />
+        android:layout_below="@+id/nom"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Prenom :"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/prenom"
+        android:layout_marginStart="-8dp"
+        android:layout_marginTop="7dp"
+        android:layout_toEndOf="@+id/prenom"
         android:text="TextView" />
+
+    <TextView
+        android:id="@+id/emailEdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prenom"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="9dp"
+        android:text="Email :"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/prenom"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="1dp"
+        android:layout_toEndOf="@+id/emailEdt"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/phoneEdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailEdt"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="9dp"
+        android:text="Phone :"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/emailEdt"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/phoneEdt"
         android:text="TextView" />
 
-</LinearLayout>
+</RelativeLayout>

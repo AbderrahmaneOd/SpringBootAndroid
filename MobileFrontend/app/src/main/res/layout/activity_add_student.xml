@@ -4,20 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="25dp"
     tools:context=".interfaces.student.AddStudent"
     android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Student" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="First Name" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Prenom" />
 
     <EditText
         android:id="@+id/firstName"
@@ -28,7 +25,9 @@
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Last Name" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Nom" />
 
     <EditText
         android:id="@+id/lastName"
@@ -39,6 +38,8 @@
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
         android:text="Username" />
 
     <EditText
@@ -49,6 +50,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
         android:text="Email" />
 
     <EditText
@@ -62,7 +65,9 @@
         android:id="@+id/textView11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Mot de passe" />
 
     <EditText
         android:id="@+id/password"
@@ -72,10 +77,11 @@
         android:inputType="textPassword" />
 
     <TextView
-        android:id="@+id/textView12"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Phone" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Téléphone" />
 
     <EditText
         android:id="@+id/phone"
@@ -88,7 +94,9 @@
         android:id="@+id/textView13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Major" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Filière" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -96,21 +104,25 @@
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/textView14"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Roles" />
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Rôles" />
 
     <TextView
         android:id="@+id/roles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:text="select roles" />
 
     <Button
         android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:textSize="20sp"
+        android:layout_margin="25dp"
+        android:text="Ajouter" />
 
 </LinearLayout>

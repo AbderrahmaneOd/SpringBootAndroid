@@ -41,9 +41,11 @@ public class FiliereList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filiere_list);
+
         filiereAdapter = new FiliereAdapter(filieres, this);
         getFiliere();
         addButton = findViewById(R.id.idAddFiliereBtn);
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +76,7 @@ public class FiliereList extends AppCompatActivity {
                 filieresList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        final TextView idstudent = view.findViewById(R.id.id);
+                        final TextView idstudent = view.findViewById(R.id.idFiliereItem);
                         Intent intent = new Intent(FiliereList.this, UpdateFiliere.class);
                         intent.putExtra("id",idstudent.getText().toString());
                         FiliereList.this.finish();

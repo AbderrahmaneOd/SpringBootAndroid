@@ -24,9 +24,8 @@ public class FiliereAdapter extends BaseAdapter {
     public void updatefilieresList(List<Filiere> newfilieres) {
         filieres.clear();
         filieres.addAll(newfilieres);
-        notifyDataSetChanged(); // Informez l'adaptateur du changement de données
+        notifyDataSetChanged();
     }
-
 
     @Override
     public int getCount() {
@@ -47,9 +46,10 @@ public class FiliereAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView == null)
             convertView = inflater.inflate(R.layout.filiere_item, null);
-        TextView id = convertView.findViewById(R.id.id);
-        TextView code = convertView.findViewById(R.id.code);
-        TextView libelle = convertView.findViewById(R.id.nom);
+
+        TextView id = convertView.findViewById(R.id.idFiliereItem);
+        TextView code = convertView.findViewById(R.id.idFiliereCodeItem);
+        TextView libelle = convertView.findViewById(R.id.idFiliereNomItem);
 
         id.setText(filieres.get(position).getId()+"");
         code.setText(filieres.get(position).getCode());

@@ -36,6 +36,7 @@ public class AddRole extends AppCompatActivity {
 
         name = findViewById(R.id.code);
         submit = findViewById(R.id.add);
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +46,7 @@ public class AddRole extends AppCompatActivity {
     }
     public void submitRole() {
         String insertUrl = "http://192.168.11.167:8080/api/role";
+
         JSONObject jsonBody = new JSONObject();
         try {
             JSONArray rolesArray = new JSONArray();

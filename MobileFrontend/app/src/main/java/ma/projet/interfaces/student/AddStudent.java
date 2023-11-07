@@ -57,6 +57,7 @@ public class AddStudent extends AppCompatActivity {
 
         getFilieres();
         getRoles();
+
         firstname = findViewById(R.id.firstName);
         lastName = findViewById(R.id.lastName);
         userName = findViewById(R.id.userName);
