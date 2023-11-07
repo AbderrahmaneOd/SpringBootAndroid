@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,16 +26,16 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.List;
 
-import ma.ensa.volley.R;
-import ma.ensa.volley.adapters.StudentAdapter;
-import ma.ensa.volley.beans.Student;
+import ma.projet.R;
+import ma.projet.adapters.StudentAdapter;
+import ma.projet.entities.Student;
 
 public class StudentList extends AppCompatActivity {
     private List<Student> students = new ArrayList<>();
     private ListView studentsList;
     RequestQueue requestQueue;
     StudentAdapter studentAdapter ;
-    private ImageButton addButton;
+    private Button addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class StudentList extends AppCompatActivity {
         setContentView(R.layout.activity_student_list);
         studentAdapter = new StudentAdapter(students, this);
         getStuents();
-        addButton = findViewById(R.id.addButton);
+        addButton = findViewById(R.id.idAddStudentBtn);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +67,7 @@ public class StudentList extends AppCompatActivity {
 //                Log.d("students",response.toString());
                 TypeToken<List<Student>> token = new TypeToken<List<Student>>() {};
                 students = gson.fromJson(response.toString(), token.getType());
-                studentsList = findViewById(R.id.studentlList);
+                studentsList = findViewById(R.id.studentList);
                 Log.d("student",students.toString());
                 studentAdapter.updateStudentsList(students);
                 studentsList.setAdapter(studentAdapter);

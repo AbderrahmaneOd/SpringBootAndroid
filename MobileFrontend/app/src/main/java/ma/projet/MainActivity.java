@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import ma.projet.interfaces.filiere.FiliereList;
+import ma.projet.interfaces.role.RoleList;
+import ma.projet.interfaces.student.StudentList;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button studentBtn, filiereBtn, roleBtn;

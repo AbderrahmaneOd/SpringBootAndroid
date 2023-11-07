@@ -36,10 +36,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import ma.ensa.volley.R;
-import ma.ensa.volley.beans.Filiere;
-import ma.ensa.volley.beans.Role;
-import ma.ensa.volley.beans.Student;
+import ma.projet.R;
+import ma.projet.entities.Filiere;
+import ma.projet.entities.Role;
+import ma.projet.entities.Student;
 
 public class UpdateStudent extends AppCompatActivity {
     RequestQueue requestQueue;

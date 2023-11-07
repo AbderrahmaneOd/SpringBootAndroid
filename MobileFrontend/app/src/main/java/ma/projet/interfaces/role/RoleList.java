@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,9 +26,9 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.List;
 
-import ma.ensa.volley.R;
-import ma.ensa.volley.adapters.RoleAdapter;
-import ma.ensa.volley.beans.Role;
+import ma.projet.R;
+import ma.projet.adapters.RoleAdapter;
+import ma.projet.entities.Role;
 
 public class RoleList extends AppCompatActivity {
 
@@ -36,14 +37,14 @@ public class RoleList extends AppCompatActivity {
     private ListView rolesList;
     RequestQueue requestQueue;
     RoleAdapter roleAdapter ;
-    private ImageButton addButton;
+    private Button addButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_role_list);
         roleAdapter = new RoleAdapter(roles, this);
         getRoles();
-        addButton = findViewById(R.id.addButton);
+        addButton = findViewById(R.id.idAddRoleBtn);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +67,7 @@ public class RoleList extends AppCompatActivity {
 //                Log.d("students",response.toString());
                 TypeToken<List<Role>> token = new TypeToken<List<Role>>() {};
                 roles = gson.fromJson(response.toString(), token.getType());
-                rolesList = findViewById(R.id.roleslist);
+                rolesList = findViewById(R.id.roleList);
                 Log.d("student",roles.toString());
                 roleAdapter.updaterolesList(roles);
                 rolesList.setAdapter(roleAdapter);

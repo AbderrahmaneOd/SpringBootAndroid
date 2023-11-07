@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,9 +26,9 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.List;
 
-import ma.ensa.volley.R;
-import ma.ensa.volley.adapters.FiliereAdapter;
-import ma.ensa.volley.beans.Filiere;
+import ma.projet.R;
+import ma.projet.adapters.FiliereAdapter;
+import ma.projet.entities.Filiere;
 
 public class FiliereList extends AppCompatActivity {
 
@@ -35,14 +36,14 @@ public class FiliereList extends AppCompatActivity {
     private ListView filieresList;
     RequestQueue requestQueue;
     FiliereAdapter filiereAdapter ;
-    private ImageButton addButton;
+    private Button addButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_filieres);
+        setContentView(R.layout.activity_filiere_list);
         filiereAdapter = new FiliereAdapter(filieres, this);
         getFiliere();
-        addButton = findViewById(R.id.addButton);
+        addButton = findViewById(R.id.idAddFiliereBtn);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -26,8 +26,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import ma.ensa.volley.R;
-import ma.ensa.volley.beans.Filiere;
+import ma.projet.R;
+import ma.projet.entities.Filiere;
 
 public class UpdateFiliere extends AppCompatActivity {
 
