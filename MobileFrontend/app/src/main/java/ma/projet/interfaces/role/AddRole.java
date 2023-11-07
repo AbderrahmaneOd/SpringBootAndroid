@@ -1,5 +1,7 @@
 package ma.projet.interfaces.role;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -33,6 +33,7 @@ public class AddRole extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_role);
+
         name = findViewById(R.id.code);
         submit = findViewById(R.id.add);
         submit.setOnClickListener(new View.OnClickListener() {

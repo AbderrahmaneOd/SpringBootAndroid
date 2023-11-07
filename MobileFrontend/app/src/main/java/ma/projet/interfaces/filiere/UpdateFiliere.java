@@ -1,5 +1,8 @@
 package ma.projet.interfaces.filiere;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -36,7 +36,6 @@ public class UpdateFiliere extends AppCompatActivity {
     private Button submit, delete;
     private String id ;
     private Filiere filiere;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +52,7 @@ public class UpdateFiliere extends AppCompatActivity {
                 submitFiliere();
             }
         });
-        delete =findViewById(R.id.delete);
+        delete = findViewById(R.id.delete);
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,15 +77,17 @@ public class UpdateFiliere extends AppCompatActivity {
             }
         });
     }
-    public void getFiliere(String id){
-        String getUrl = "http://192.168.11.167:8080/api/filiere/"+id;
+
+    public void getFiliere(String id) {
+        String getUrl = "http://192.168.11.167:8080/api/filiere/" + id;
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,
                 getUrl, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Gson gson = new Gson();
-                TypeToken<Filiere> token = new TypeToken<Filiere>() {};
+                TypeToken<Filiere> token = new TypeToken<Filiere>() {
+                };
                 filiere = gson.fromJson(response.toString(), token.getType());
                 code.setText(filiere.getCode());
                 libelle.setText(filiere.getNom());
@@ -99,8 +100,9 @@ public class UpdateFiliere extends AppCompatActivity {
         });
         requestQueue.add(request);
     }
+
     public void submitFiliere() {
-        String insertUrl = "http://192.168.11.167:8080/api/filiere/"+id;
+        String insertUrl = "http://192.168.11.167:8080/api/filiere/" + id;
         JSONObject jsonBody = new JSONObject();
         try {
             JSONArray rolesArray = new JSONArray();
@@ -120,7 +122,7 @@ public class UpdateFiliere extends AppCompatActivity {
                 insertUrl, jsonBody, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                Log.d("resultat", response+"");
+                Log.d("resultat", response + "");
             }
         }, new Response.ErrorListener() {
             @Override
@@ -130,6 +132,7 @@ public class UpdateFiliere extends AppCompatActivity {
         });
         requestQueue.add(request);
     }
+
     public void deleteFiliere(String id) {
         String deleteUrl = "http://192.168.11.167:8080/api/filiere/" + id;
         requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -153,5 +156,4 @@ public class UpdateFiliere extends AppCompatActivity {
 
         requestQueue.add(request);
     }
-
 }

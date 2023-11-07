@@ -1,5 +1,8 @@
 package ma.projet.interfaces.student;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AlertDialog;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +15,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -42,6 +42,7 @@ import ma.projet.entities.Role;
 import ma.projet.entities.Student;
 
 public class UpdateStudent extends AppCompatActivity {
+
     RequestQueue requestQueue;
     private  String id;
     private Student student;
@@ -60,6 +61,7 @@ public class UpdateStudent extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_student);
+
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
         getFilieres();
